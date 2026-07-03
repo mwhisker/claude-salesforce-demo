@@ -1,0 +1,74 @@
+{
+    "name": "Salesforce Development",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bullseye",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11"
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "11"
+        },
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/jayree/devcontainer-features/sf-autocomplete:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "aaron-bond.better-comments",
+                "anthropic.claude-code",
+                "atommaterial.a-file-icon-vscode",
+                "bierner.markdown-mermaid",
+                "charliermarsh.ruff",
+                "chuckjonas.apex-pmd",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "formulahendry.code-runner",
+                "github.codespaces",
+                "github.copilot",
+                "github.copilot-chat",
+                "github.github-vscode-theme",
+                "github.vscode-pull-request-github",
+                "gruntfuggly.todo-tree",
+                "hbenl.vscode-test-explorer",
+                "imgildev.vscode-json-flow",
+                "littlefoxteam.vscode-python-test-adapter",
+                "mechatroner.rainbow-csv",
+                "modicatech.apex-code-coverage-visualizer",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.vscode-python-envs",
+                "ms-vscode.test-adapter-converter",
+                "ms-vscode.vscode-json",
+                "njpwerner.autodocstring",
+                "redhat.vscode-xml",
+                "salesforce.apex-language-server-extension",
+                "salesforce.salesforce-vscode-slds",
+                "salesforce.salesforcedx-einstein-gpt",
+                "salesforce.salesforcedx-vscode@63.12.0",
+                "salesforce.salesforcedx-vscode-apex@63.12.0",
+                "salesforce.salesforcedx-vscode-apex-debugger@63.12.0",
+                "salesforce.salesforcedx-vscode-apex-oas",
+                "salesforce.salesforcedx-vscode-apex-replay-debugger@63.12.0",
+                "salesforce.salesforcedx-vscode-core",
+                "salesforce.salesforcedx-vscode-lightning",
+                "salesforce.salesforcedx-vscode-lwc",
+                "salesforce.salesforcedx-vscode-org",
+                "salesforce.salesforcedx-vscode-soql",
+                "salesforce.salesforcedx-vscode-visualforce",
+                "salesforce.sfdx-code-analyzer-vscode",
+                "toddhalfpenny.sfflowvisualiser",
+                "yzhang.markdown-all-in-one",
+                "zhuangtongfa.material-theme"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            }
+        }
+    },
+    "postCreateCommand": ".devcontainer/post-create.sh",
+    "forwardPorts": [1717, 3333, 8080],
+    "remoteUser": "node"
+}

@@ -1,0 +1,91 @@
+{
+    "salesforcedx-vscode-core.show-cli-success-msg": false,
+    "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
+    "salesforcedx-vscode-core.push-or-deploy-on-save.preferDeployOnSave": true,
+    "prettier.tabWidth": 4,
+    "prettier.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/.sfdx": true,
+        "**/.localdevserver": true
+    },
+    "files.watcherExclude": {
+        "**/.sfdx/**": true,
+        "**/node_modules/**": true,
+        "**/.localdevserver/**": true
+    },
+    "terminal.integrated.suggest.enabled": true,
+
+    // Font settings with explicit ligature configuration
+    "editor.fontFamily": "Fira Code, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.fontWeight": "400",
+    "editor.allowVariableFonts": false,
+    "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "all",
+    //"editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+
+    // Terminal font settings
+    "terminal.integrated.fontFamily": "'Fira Code', monospace",
+    "terminal.integrated.fontSize": 14,
+    "workbench.fontAliasing": "default",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontLigatures.featureSettings": "",
+    "telemetry.editStats.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "gitlens.telemetry.enabled": false,
+    "salesforcedx-vscode-core.telemetry.enabled": false,
+    "code-runner.enableAppInsights": false,
+    "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
+    "github.copilot.chat.generateTests.codeLens": true,
+    "testing.coverageToolbarEnabled": true,
+
+    // Python configuration
+    "python.defaultInterpreterPath": "${workspaceFolder}/.python/venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "autoDocstring.docstringFormat": "google",
+    "autoDocstring.startOnNewLine": false,
+    "autoDocstring.includeExtendedSummary": true,
+
+    // Ruff configuration for Python linting and formatting
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "ruff.path": ["${workspaceFolder}/.python/venv/bin/ruff"],
+    "ruff.configurationPreference": "filesystemFirst",
+    "ruff.importStrategy": "fromEnvironment",
+
+    // Language-specific formatter settings
+    "[apex]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[apex-anon]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

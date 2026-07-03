@@ -1,0 +1,58 @@
+{
+    "name": "salesforce-app",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Salesforce App",
+    "scripts": {
+        "lint": "eslint 'force-app/**/lwc/**/*.js' --no-error-on-unmatched-pattern",
+        "lint:fix": "eslint 'force-app/**/lwc/**/*.js' --fix --no-error-on-unmatched-pattern",
+        "test": "npm run test:unit",
+        "test:unit": "sfdx-lwc-jest --skipApiVersionCheck -- --passWithNoTests",
+        "test:unit:watch": "sfdx-lwc-jest --watch",
+        "test:unit:debug": "sfdx-lwc-jest --debug",
+        "test:unit:coverage": "sfdx-lwc-jest --coverage",
+        "test:apex": "sf apex run test --wait 10 --result-format human --code-coverage",
+        "test:all": "npm run test:unit && npm run test:apex",
+        "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}\" && prettier --write \"**/*.xml\" --plugin @prettier/plugin-xml",
+        "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}\" && prettier --check \"**/*.xml\" --plugin @prettier/plugin-xml",
+        "validate": "npm run lint && npm run prettier:verify && npm run test:unit",
+        "deploy": "sf project deploy start",
+        "deploy:check": "sf project deploy start --dry-run",
+        "retrieve": "sf project retrieve start",
+        "org:open": "sf org open",
+        "org:list": "sf org list"
+    },
+    "devDependencies": {
+        "@lwc/engine-dom": "^8.18.0",
+        "@lwc/eslint-plugin-lwc": "^3.4.0",
+        "@lwc/jest-preset": "^19.1.0",
+        "@prettier/plugin-xml": "^3.4.1",
+        "@salesforce/eslint-config-lwc": "^3.7.2",
+        "@salesforce/eslint-plugin-aura": "^2.1.0",
+        "@salesforce/eslint-plugin-lightning": "^1.0.0",
+        "@salesforce/sfdx-lwc-jest": "^3.1.0",
+        "eslint": "^9.26.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-jest": "^28.11.0",
+        "husky": "^9.0.0",
+        "jest": "^29.7.0",
+        "lint-staged": "^15.0.0",
+        "prettier": "^3.5.3",
+        "prettier-plugin-apex": "^2.2.6"
+    },
+    "lint-staged": {
+        "force-app/**/*.{cls,trigger}": [
+            "prettier --write --plugin prettier-plugin-apex"
+        ],
+        "force-app/**/lwc/**/*.js": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "force-app/**/lwc/**/*.{html,css}": [
+            "prettier --write"
+        ],
+        "*.{json,md,yaml,yml}": [
+            "prettier --write"
+        ]
+    }
+}

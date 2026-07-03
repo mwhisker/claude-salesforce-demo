@@ -1,0 +1,17 @@
+./.devcontainer/devcontainer.json
+./.devcontainer/post-create.sh
+./.eslintrc.json
+./.prettierignore
+./.prettierrc
+./.vscode/extensions.json
+./.vscode/launch.json
+./.vscode/settings.json
+./LICENSE
+./README.md
+./force-app/main/default/.gitkeep
+./jest-mocks/.gitkeep
+./jest.config.js
+./package.json
+./sfdx-project.json
+./template-update.bundle
+./template-update.patch
