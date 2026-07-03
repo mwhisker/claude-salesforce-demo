@@ -1,0 +1,9 @@
+Order {!Order.OrderNumber} has reached the Fulfilment stage.
+
+Account: {!Order.Account.Name}
+Order Amount: {!Order.TotalAmount}
+Fulfilment Status: {!Order.Fulfillment_Status__c}
+
+This is an automated notification sent to the fulfilment and account management teams to confirm that the above order is ready for the next steps in fulfilment processing.
+
+No action is required unless you notice discrepancies with the order details above.
