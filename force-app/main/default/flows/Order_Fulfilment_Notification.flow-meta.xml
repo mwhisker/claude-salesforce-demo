@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Fulfilment_Email_Alert</name>
+        <label>Send Fulfilment Email Alert</label>
+        <locationX>176</locationX>
+        <locationY>216</locationY>
+        <actionName>Order.Order_Fulfilment_Notification</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Mark_Notification_Sent</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <interviewLabel
+    >Order Fulfilment Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Order Fulfilment Notification</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Mark_Notification_Sent</name>
+        <label>Mark Notification Sent</label>
+        <locationX>176</locationX>
+        <locationY>324</locationY>
+        <inputAssignments>
+            <field>Fulfillment_Notification_Sent__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Fulfilment_Email_Alert</targetReference>
+        </connector>
+        <filterFormula
+        >{!$Record.Fulfillment_Status__c} = &quot;Fulfilled&quot; &amp;&amp; ISCHANGED({!$Record.Fulfillment_Status__c}) &amp;&amp; NOT({!$Record.Fulfillment_Notification_Sent__c})</filterFormula>
+        <object>Order</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Order_Fulfilment_Notification</fullName>
+        <description
+        >Sends a templated email notification to the internal fulfilment and account management teams when an Order reaches the Fulfilment stage.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>email</type>
+            <recipient>fulfilment-team@example.com</recipient>
+        </recipients>
+        <recipients>
+            <type>email</type>
+            <recipient>account-management@example.com</recipient>
+        </recipients>
+        <template>OrderNotifications/Order_Fulfilment_Notification</template>
+    </alerts>
+</Workflow>

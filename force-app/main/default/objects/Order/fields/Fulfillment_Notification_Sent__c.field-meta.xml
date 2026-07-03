@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fulfillment_Notification_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+    >Indicates whether the automated fulfilment email notification has already been sent for this Order, preventing duplicate notifications.</description>
+    <externalId>false</externalId>
+    <label>Fulfillment Notification Sent</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
