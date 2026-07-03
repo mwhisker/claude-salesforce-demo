@@ -43,9 +43,9 @@
             <targetReference>Send_Fulfilment_Email_Alert</targetReference>
         </connector>
         <filterFormula
-        >{!$Record.Fulfillment_Status__c} = &quot;Fulfilled&quot; &amp;&amp; ISCHANGED({!$Record.Fulfillment_Status__c}) &amp;&amp; NOT({!$Record.Fulfillment_Notification_Sent__c})</filterFormula>
+        >{!$Record.Fulfillment_Status__c} = &quot;Fulfilled&quot; &amp;&amp; NOT({!$Record.Fulfillment_Notification_Sent__c})</filterFormula>
         <object>Order</object>
-        <recordTriggerType>Update</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

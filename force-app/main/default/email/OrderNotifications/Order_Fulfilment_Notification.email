@@ -1,6 +1,6 @@
 Order {!Order.OrderNumber} has reached the Fulfilment stage.
 
-Account: {!Order.Account}
+Account: {!Order.Account.Name}
 Order Amount: {!Order.TotalAmount}
 Fulfilment Status: {!Order.Fulfillment_Status__c}
 

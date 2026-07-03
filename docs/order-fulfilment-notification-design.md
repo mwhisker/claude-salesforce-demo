@@ -25,9 +25,9 @@ There was no way to track when an Order reached the fulfilment stage, and no aut
     - `Order.Order_Fulfilment_Notification` (Workflow Email Alert) — references the email template above and sends to the internal fulfilment team and account management distribution addresses.
 
 4. **Record-Triggered Flow**
-    - `Order_Fulfilment_Notification` — an after-save, record-triggered flow on `Order` that fires when `Fulfillment_Status__c` changes to `Fulfilled` and a notification has not already been sent.
+    - `Order_Fulfilment_Notification` — an after-save, record-triggered flow on `Order` (fires on create and update) that runs whenever `Fulfillment_Status__c` is `Fulfilled` and a notification has not already been sent.
     - Steps:
-        1. Entry criteria: `Fulfillment_Status__c = 'Fulfilled'` AND the field just changed AND `Fulfillment_Notification_Sent__c` is `false`.
+        1. Entry criteria: `Fulfillment_Status__c = 'Fulfilled'` AND `Fulfillment_Notification_Sent__c` is `false`.
         2. Invoke the `Order.Order_Fulfilment_Notification` email alert.
         3. Update the record, setting `Fulfillment_Notification_Sent__c = true` to prevent re-sending on subsequent saves.
 
