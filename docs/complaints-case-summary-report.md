@@ -29,7 +29,9 @@ day at 8:00 AM UTC.
 - Queries all open (`IsClosed = false`) `Case` records where `Type = Complaint`
 - Builds a plain-text summary of the matching cases
 - Emails the summary to the address configured in the `RecipientEmail`
-  input variable (defaults to `support-manager@example.com`) using
+  input variable (defaults to the placeholder
+  `REPLACE_WITH_RECIPIENT_EMAIL@yourorg.com`, which **must** be updated
+  before activating the flow) using
   the current running user as the sender
 - If there are no open complaint cases, a short "no complaints today" email
   is sent instead

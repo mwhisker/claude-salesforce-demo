@@ -208,7 +208,7 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <value>
-            <stringValue>support-manager@example.com</stringValue>
+            <stringValue>REPLACE_WITH_RECIPIENT_EMAIL@yourorg.com</stringValue>
         </value>
     </variables>
     <variables>
