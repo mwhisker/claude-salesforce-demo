@@ -4,7 +4,7 @@ Closes [#5](https://github.com/mwhisker/claude-salesforce-demo/issues/5).
 
 This feature adds a report that summarizes all open `Case` records of type
 `Complaint`, and a Scheduled-Triggered Flow that emails that summary every
-day at 8:00 AM.
+day at 8:00 AM UTC.
 
 ## Metadata included
 
@@ -23,7 +23,9 @@ day at 8:00 AM.
 
 ### Flow: Complaints Case Summary Daily Email
 
-- Type: Scheduled-Triggered Flow (`AutoLaunchedFlow`), runs `Daily` at `08:00 AM`
+- Type: Scheduled-Triggered Flow (`AutoLaunchedFlow`), runs `Daily` at `08:00 AM UTC`
+  (the flow's `startTime` is stored as `08:00:00.000Z`; adjust it if you need
+  the summary sent at 8:00 AM in a different time zone)
 - Queries all open (`IsClosed = false`) `Case` records where `Type = Complaint`
 - Builds a plain-text summary of the matching cases
 - Emails the summary to the address configured in the `RecipientEmail`

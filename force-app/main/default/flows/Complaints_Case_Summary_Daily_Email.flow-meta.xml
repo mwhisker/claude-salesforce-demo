@@ -108,7 +108,7 @@
         </rules>
     </decisions>
     <description
-    >Runs daily at 8am, summarizes all open Case records of type Complaint, and emails the summary to the support team.</description>
+    >Runs daily at 8am UTC, summarizes all open Case records of type Complaint, and emails the summary to the support team.</description>
     <formulas>
         <name>HasComplaintCases</name>
         <dataType>Boolean</dataType>
