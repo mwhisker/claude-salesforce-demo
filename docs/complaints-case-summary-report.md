@@ -47,5 +47,10 @@ day at 8:00 AM UTC.
    in the flow (or set it when invoking/scheduling the flow) to the address
    that should receive the daily summary.
 3. **Deploy** — deploy the report folder, report, and flow with
-   `npm run deploy` (or `sf project deploy start`). The flow is deployed with
-   `Active` status so the daily schedule starts as soon as it is deployed.
+   `npm run deploy` (or `sf project deploy start`). The flow is included with
+   `Draft` status so it will not run until it is activated.
+4. **Activate** — once the `RecipientEmail` value has been updated (and the
+   `Complaint` picklist value confirmed), activate the flow from Setup
+   (Flows) or by redeploying with `<status>Active</status>` set in the flow
+   metadata. Only activate after the recipient email has been configured, to
+   avoid sending emails to the placeholder address.

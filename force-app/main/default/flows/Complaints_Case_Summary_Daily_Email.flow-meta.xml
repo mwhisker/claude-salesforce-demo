@@ -200,7 +200,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>RecipientEmail</name>
         <dataType>String</dataType>
